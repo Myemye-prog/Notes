@@ -1,0 +1,1405 @@
+
+Python Lists
+1. Lists are used to store multiple items in a single variable.
+2. Lists are one of 4 built-in data types in Python used to store collections of data, the other 3 are Tuple, Set, and Dictionary, all with different qualities and usage.
+3. List is one of the sequence of the Data Structure
+4. Lists are collection of items[Strings, integer or even other lists]
+5. Lists are enclosed in []
+6. Each item in the list has an assigned index value.
+7. List are mutable, means item in the list can be changed.
+List Items
+
+List items are ordered, changeable, and allow duplicate values.
+
+List items are indexed, the first item has index [0], the second item has index [1] etc.
+Ordered
+
+When we say that lists are ordered, it means that the items have a defined order, and that order will not change.
+
+If you add new items to a list, the new items will be placed at the end of the list.
+Changeable
+
+The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.
+Allow Duplicates
+
+Since lists are indexed, lists can have items with the same value:
+
+thislist = ["apple", "banana", "cherry", "apple", "cherry"]
+print(thislist)
+
+['apple', 'banana', 'cherry', 'apple', 'cherry']
+
+# List Length
+# To determine how many items a list has, use the len() function:
+
+#Example
+#Print the number of items in the list:
+
+thislist = ["apple", "banana", "cherry"]
+print(len(thislist))
+
+3
+
+#List Items - Data Types
+#List items can be of any data type:
+
+#Example
+#String, int and boolean data types:
+
+list1 = ["apple", "banana", "cherry"]
+list2 = [1, 5, 7, 9, 3]
+list3 = [True, False, False]
+
+#A list can contain different data types:
+
+#Example
+#A list with strings, integers and boolean values:
+
+list1 = ["abc", 34, True, 40, "male"]
+print(list1)
+
+['abc', 34, True, 40, 'male']
+
+emptyList = []
+lst = ["one", "Two", "Three", "four"] # list of Strings
+lst2 = [1,2,3,4] # list of integers
+lst3 = [[1,2], [3,4]] # list of lists
+lst4 = [1, "ramu", 24, 29.98] #list of different datatypes
+
+print(emptyList)
+print(lst)
+print(lst4, lst)
+print(lst3)
+print(len(lst4)) # Lenth of the list
+
+[]
+['one', 'Two', 'Three', 'four']
+[1, 'ramu', 24, 29.98] ['one', 'Two', 'Three', 'four']
+[[1, 2], [3, 4]]
+4
+
+#List Append
+lst = ["One", "Two","Three","Four"]
+lst.append("Five")
+print(lst)
+
+['One', 'Two', 'Three', 'Four', 'Five']
+
+#List Append multiple items
+my_list = [1,2,3]
+items_to_append = [4 ,5, 6]
+
+my_list += items_to_append
+print(my_list)
+
+[1, 2, 3, 4, 5, 6]
+
+#List insert
+lst = ["One", "Two","Three","Four"]
+lst.insert(2,"Nine")
+print(lst)
+
+['One', 'Two', 'Nine', 'Three', 'Four']
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+print(thislist)
+
+['apple', 'blackcurrant', 'cherry']
+
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+thislist[1:3] = ["blackcurrant", "watermelon"]
+print(thislist)
+
+['apple', 'blackcurrant', 'watermelon', 'orange', 'kiwi', 'mango']
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1:2] = ["blackcurrant", "watermelon"]
+print(thislist)
+
+['apple', 'blackcurrant', 'watermelon', 'cherry']
+
+#Change the second and third value by replacing it with one value:
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1:3] = ["watermelon"]
+print(thislist)
+
+['apple', 'watermelon']
+
+#List Remove
+lst = ["One", "Two","Three","Four", "Two"]
+lst.remove("Two")
+print(lst)
+
+['One', 'Three', 'Four', 'Two']
+
+thislist = ["apple", "banana", "cherry"]
+thislist.remove("banana")
+print(thislist)
+
+['apple', 'cherry']
+
+lst = ["One", "Two", "Three", "Four", "Two"]
+
+# Remove all occurrences of "Two"
+while "Two" in lst:
+    lst.remove("Two")
+
+print(lst)
+
+['One', 'Three', 'Four']
+
+#List append
+lst = ["One", "Two","Three","Four"]
+lst1 = ["One", "Two","Three","Four", "Five"]
+lst.append(lst1)
+print(lst)
+
+['One', 'Two', 'Three', 'Four', ['One', 'Two', 'Three', 'Four', 'Five']]
+
+#List extend
+lst = ["One", "Two","Three","Four"]
+lst1 = ["One", "Two","Three","Four", "Five"]
+lst.extend(lst1)
+print(lst)
+
+['One', 'Two', 'Three', 'Four', 'One', 'Two', 'Three', 'Four', 'Five']
+
+#List Delete, #pop, #remove
+lst1 = ["One", "Two","Three","Four", "Five"]
+del lst1[1]
+print(lst1)
+a= lst1.pop(1)
+print(a)
+print(lst1)
+lst1.remove("Five")
+print(lst1)
+
+['One', 'Three', 'Four', 'Five']
+Three
+['One', 'Four', 'Five']
+['One', 'Four']
+
+thislist = ["apple", "banana", "cherry"]
+del thislist[0]
+print(thislist)
+
+['banana', 'cherry']
+
+thislist = ["apple", "banana", "cherry"]
+thislist.clear()
+print(thislist)
+
+[]
+
+#Keyword 'in', 'not in' is used to test if an item is in a list 
+lst = ['one','two','three','four']
+if 'two' in lst:
+    print("AI")
+if 'six' not in lst:
+    print("ML")
+
+AI
+ML
+
+#List Reverse
+lst = ["one","Two","Three","Four"]
+lst.reverse()
+print(lst)
+
+['Four', 'Three', 'Two', 'one']
+
+#Sorting both in ascending and descending orders
+numbers = [23,44,9,92,7,9,33]
+sorted_lst = sorted(numbers)
+print(sorted_lst)
+sorted_lst = sorted(numbers, reverse = True)
+print(sorted_lst)
+
+[7, 9, 9, 23, 33, 44, 92]
+[92, 44, 33, 23, 9, 9, 7]
+
+lst = [1,20,5,5,4.3]
+lst.sort()
+print(lst) #sort the list and stored in itself
+lst.sort(reverse = True)
+print(lst)
+
+[1, 4.3, 5, 5, 20]
+[20, 5, 5, 4.3, 1]
+
+lst = [1,20,5,5,'b',4.3]
+lst.sort()
+#int and char are not sorted at once within the same list
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-13-0d08dad6f2cb> in <module>
+      1 lst = [1,20,5,5,'b',4.3]
+----> 2 lst.sort()
+      3 #int and char are not sorted at once within the same list
+
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+#List Having Multiple References
+
+lst = [1,2,3,4,5]
+abc = lst
+abc.append(6)
+print(lst)
+
+[1, 2, 3, 4, 5, 6]
+
+#String split to create a list using delimiter
+lst = "My name is Faraz, I am Assistant Professor at JMI"
+a = lst.split(',')
+print(a)
+a = lst.split() # bydefault split is white-character: space or tab
+print(a)
+
+['My name is Faraz', ' I am Assistant Professor at JMI']
+['My', 'name', 'is', 'Faraz,', 'I', 'am', 'Assistant', 'Professor', 'at', 'JMI']
+
+text = "My name is Faraz, I am Assistant Professor at JMI"
+# Split the text at the comma
+list1, list2 = text.split(',')
+
+print("List 1: ", list1)
+print("List 2: ", list2.strip())  # .strip() is used to remove leading and trailing spaces
+
+List 1:  My name is Faraz
+List 2:  I am Assistant Professor at JMI
+
+original_list = ['My name is Faraz', ' I am Assistant Professor at JMI']
+list1 = [original_list[0]]
+list2 = [original_list[1]]
+
+print(list1)  # Output: ['My name is Faraz']
+print(list2)  # Output: [' I am Assistant Professor at JMI']
+
+['My name is Faraz']
+[' I am Assistant Professor at JMI']
+
+#List Indexing
+lst = [1,2,3,4]
+print(lst[0])
+print(lst[-1])
+
+1
+4
+
+#List SLicing
+numbers = [1, 2, 3, 4, 5, 6]
+print(numbers[:])
+
+#print from index 0 to 3
+
+print(numbers[0:4])
+
+#numbers[startindex: endindex: stepsize]
+
+print(numbers[::2])
+print(numbers[2::2])
+
+[1, 2, 3, 4, 5, 6]
+[1, 2, 3, 4]
+[1, 3, 5]
+[3, 5]
+
+#List extend using "+" sign
+lst1 = [1,2,3]
+lst2 = [4,5,6, "Naveen", "Waseem"]
+new_lst = lst1 + lst2
+print(new_lst)
+
+[1, 2, 3, 4, 5, 6, 'Naveen', 'Waseem']
+
+#List Count
+numbers = [1,2,3,4,5,6,1,2,3,4,5,6,6,6,1,1,2,2,3,3,4]
+print(numbers.count(6))
+
+4
+
+from collections import Counter
+
+numbers = [1,2,3,4,5,6,1,2,3,4,5,6,6,6,1,1,2,2,3,3,4]
+frequency_count = Counter(numbers)
+
+print(frequency_count)
+
+Counter({1: 4, 2: 4, 3: 4, 6: 4, 4: 3, 5: 2})
+
+Updating List Values
+
+# updating list values  
+list = [1, 2, 3, 4, 5, 6]       
+print(list)       
+# It will assign value to the second index     
+list[2] = 10     
+print(list)      
+
+[1, 2, 3, 4, 5, 6]
+[1, 2, 10, 4, 5, 6]
+
+# Adding multiple-element     
+list[1:3] = [89, 78]       
+print(list)     
+ 
+
+[1, 89, 78, 4, 5, 6]
+
+# It will add value at the end of the list    
+list[-1] = 25    
+print(list)   
+
+[1, 89, 78, 4, 5, 25]
+
+#List looping
+numbers = [1,2,3,4,5,6,1,2,3,4,5,6,6,6,1,1,2,2,3,3,4]
+for i in numbers:
+    print(i)
+
+1
+2
+3
+4
+5
+6
+1
+2
+3
+4
+5
+6
+6
+6
+1
+1
+2
+2
+3
+3
+4
+
+# To print all the numbers in a single line, you can modify the print() function in your loop by setting its end parameter to a space (’ ‘) instead of the default newline character (’\n’). 
+# Here’s how you can do it:
+numbers = [1,2,3,4,5,6,1,2,3,4,5,6,6,6,1,1,2,2,3,3,4]
+for i in numbers:
+    print(i, end=' ')
+
+1 2 3 4 5 6 1 2 3 4 5 6 6 6 1 1 2 2 3 3 4 
+
+Adding Elements to the List
+
+#Declaring the empty list    
+l =[]    
+#Number of elements will be entered by the user      
+n = int(input("Enter the number of elements in the list:"))    
+# for loop to take the input    
+for i in range(0,n):       
+    # The input is taken from the user and added to the list as the item    
+    l.append(input("Enter the item:"))       
+print("printing the list items..")     
+# traversal loop to print the list items      
+for i in l:     
+    print(i, end = "  ")   
+
+Enter the number of elements in the list:4
+Enter the item:1
+Enter the item:2
+Enter the item:3
+Enter the item:4
+printing the list items..
+1  2  3  4  
+
+Python List Built-in Functions
+Python provides the following built-in functions, which can be used with the lists.
+
+len() max() min()
+
+# size of the list  
+# declaring the list  
+list1 = [12, 16, 18, 20, 39, 40]  
+# finding length of the list  
+len(list1)  
+
+6
+
+# maximum of the list  
+list1 = [103, 675, 321, 782, 200]  
+# large element in the list  
+print(max(list1))  
+
+782
+
+# minimum of the list  
+list1 = [103, 675, 321, 782, 200]  
+# smallest element in the list  
+print(min(list1))  
+
+103
+
+List comprehension is a concise and powerful feature in Python that allows you to create new lists by applying expressions to each item in an existing iterable (e.g., list, tuple, string, etc.). It provides a compact and readable way to generate lists without the need for explicit loops.
+The basic syntax of a list comprehension is as follows:
+new_list = [expression for item in iterable if condition]
+
+#without list comprehension
+squares = []
+for i in range(10):
+    squares.append(i**2) #power operator
+print(squares)
+    
+
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+#using list comprehension
+squares= [i**2 for i in range(10)]
+print(squares)
+
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+#Creating a list of squares of numbers from 1 to 5:
+squares = [x**2 for x in range(1, 6)]
+print(squares)
+
+[1, 4, 9, 16, 25]
+
+lst = [-10,-20,-30,-40,10,20,30,40]
+new_lst = [i*2 for i in lst]
+print(new_lst)
+
+[-20, -40, -60, -80, 20, 40, 60, 80]
+
+lst = [-10,-20,-30,-40,10,20,30,40]
+new_lst = [i*2 for i in lst if i>=0]
+print(new_lst)
+
+[20, 40, 60, 80]
+
+lst = [-10,-20,-30,-40,10,20,30,40]
+new_lst = [(i,i*2) for i in lst if i>=0]
+print(new_lst)
+
+[(10, 20), (20, 40), (30, 60), (40, 80)]
+
+new_lst = [(i,i*2) for i in range(10) if i>8]
+print(new_lst)
+
+[(9, 18)]
+
+#Filtering out even numbers from a list:
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = [x for x in numbers if x % 2 == 0]
+print(even_numbers)
+
+[2, 4, 6, 8, 10]
+
+#Converting string characters to uppercase: char.lower(), char.title()
+text = "hello world"
+uppercase_text = [char.upper() for char in text]
+print(uppercase_text)
+
+['H', 'E', 'L', 'L', 'O', ' ', 'W', 'O', 'R', 'L', 'D']
+
+# Define the matrix
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
+
+# Transpose the matrix
+transpose = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+
+print(transpose)
+
+[[1, 4, 7, 10], [2, 5, 8, 11], [3, 6, 9, 12]]
+
+Python Tuples
+Tuples are an immutable data type, meaning their elements cannot be changed after they are generated.
+Each element in a tuple has a specific order that will never change because tuples are ordered sequences.
+Forming a Tuple:
+All the objects-also known as "elements"-must be separated by a comma, enclosed in parenthesis (). Although parentheses are not required, they are recommended.
+Any number of items, including those with various data types (dictionary, string, float, list, etc.), can be contained in a tuple.
+
+# Python program to show how to create a tuple    
+# Creating an empty tuple    
+empty_tuple = ()    
+print("Empty tuple: ", empty_tuple)    
+    
+# Creating tuple having integers    
+int_tuple = (4, 6, 8, 10, 12, 14)    
+print("Tuple with integers: ", int_tuple)    
+    
+# Creating a tuple having objects of different data types    
+mixed_tuple = (4, "Python", 9.3)    
+print("Tuple with different data types: ", mixed_tuple)    
+    
+# Creating a nested tuple    
+nested_tuple = ("Python", {4: 5, 6: 2, 8:2}, (5, 3, 5, 6))    
+print("A nested tuple: ", nested_tuple)    
+
+Empty tuple:  ()
+Tuple with integers:  (4, 6, 8, 10, 12, 14)
+Tuple with different data types:  (4, 'Python', 9.3)
+A nested tuple:  ('Python', {4: 5, 6: 2, 8: 2}, (5, 3, 5, 6))
+
+# Python program to create a tuple without using parentheses    
+# Creating a tuple    
+tuple_ = 4, 5.7, "Tuples", ["Python", "Tuples"]    
+# Displaying the tuple created    
+print(tuple_)  
+# Checking the data type of object tuple_    
+print(type(tuple_) )    
+   
+
+(4, 5.7, 'Tuples', ['Python', 'Tuples'])
+<class 'tuple'>
+
+#tuple having integers
+t = (1,2,3)
+print(t)
+#tuple with mixed datatypes
+t = (1,2, "apple", 3, "Raju", 4.44, "Abc")
+print(t)
+#Nested Tuple
+t =(1, (1,2,3), [1,2,3,"Raju", "ABc",2.22])
+print(t)
+
+(1, 2, 3)
+(1, 2, 'apple', 3, 'Raju', 4.44, 'Abc')
+(1, (1, 2, 3), [1, 2, 3, 'Raju', 'ABc', 2.22])
+
+#For tuple paranthesis is not enough
+t =("Satish")
+type(t) # it is of string type instead of tuple
+
+str
+
+#we need to put comma at the end, However if we have more than one element that there will be no proble
+t = ("Satish",)
+type(t)
+
+tuple
+
+#Paranthesis is optional
+t = "Satish",
+print(type(t))
+print(t)
+
+<class 'tuple'>
+('Satish',)
+
+#Accessing Elements in Tuple
+t = (1,2, "apple", 3, "Raju", 4.44, "Abc")
+print(t[2])
+
+apple
+
+Slicing
+Tuple slicing is a common practice in Python and the most common way for programmers to deal with practical issues. Look at a tuple in Python. Slice a tuple to access a variety of its elements. Using the colon as a straightforward slicing operator (:) is one strategy.
+To gain access to various tuple elements, we can use the slicing operator colon (:).
+
+# Python program to show how slicing works in Python tuples    
+# Creating a tuple    
+tuple = ("Python", "Tuple", "Ordered", "Immutable", "Collection", "Objects")    
+
+# Using slicing to access elements of the tuple    
+print("Elements between indices 1 and 3: ", tuple[1:3])    
+
+# Using negative indexing in slicing    
+print("Elements between indices 0 and -4: ", tuple[:-4])    
+
+# Printing the entire tuple by using the default start and end values.     
+print("Entire tuple: ", tuple[:])    
+
+Elements between indices 1 and 3:  ('Tuple', 'Ordered')
+Elements between indices 0 and -4:  ('Python', 'Tuple')
+Entire tuple:  ('Python', 'Tuple', 'Ordered', 'Immutable', 'Collection', 'Objects')
+
+t =(1, (1,2,3), [1,2,3,"Raju", "ABc",2.22])
+print(t[2])
+print(t[2][3])
+print(t[-2])
+
+[1, 2, 3, 'Raju', 'ABc', 2.22]
+Raju
+(1, 2, 3)
+
+t = (1,2,3,4,5,6)
+print(t[1:4])
+print(t[0:5:2])
+print(t[:-2])
+print(t[:-1:2])
+
+(2, 3, 4)
+(1, 3, 5)
+(1, 2, 3, 4)
+(1, 3, 5)
+
+t =(1, (1,2,3), [1,2,3,"Raju", "ABc",2.22])
+t[2] = "x"
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~\AppData\Local\Temp\ipykernel_19480\132416917.py in <module>
+      1 t =(1, (1,2,3), [1,2,3,"Raju", "ABc",2.22])
+----> 2 t[2] = "x"
+
+TypeError: 'tuple' object does not support item assignment
+
+#List inside the tuple can be mutable
+t =(1, (1,2,3), [1,2,3,"Raju", "ABc",2.22])
+t[2][0] = "x"
+print(t)
+
+(1, (1, 2, 3), ['x', 2, 3, 'Raju', 'ABc', 2.22])
+
+#concatenate Tuple
+t = (1,2,3) + (4,5,6)
+print(t)
+
+(1, 2, 3, 4, 5, 6)
+
+#repeate the elements in a tuple for a given number of times
+t = (("Satish",)*10)
+print(t)
+
+('Satish', 'Satish', 'Satish', 'Satish', 'Satish', 'Satish', 'Satish', 'Satish', 'Satish', 'Satish')
+
+#Tuple Deletion
+#We cannot change the elements in a tuple.
+#That also means we cannot delete or remove items from a tuple
+
+#delete entire tuples using del keyword
+t = (1,2,3,4,5)
+del t
+print(t)
+
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+~\AppData\Local\Temp\ipykernel_1896\3271078757.py in <module>
+      6 t = (1,2,3,4,5)
+      7 del t
+----> 8 print(t)
+
+NameError: name 't' is not defined
+
+#Tuple Count
+t = (1,2,3,4,5,6,1,2,3,4,5)
+t.count(3)
+
+2
+
+#Tuple Index
+t = (1,2,3,4,5,6,1,2,3,4,5)
+print(t.index(4)) #return index of the first element is equal to 3
+
+3
+
+#Tuple Membership
+t = (1,2,3,4,5,6,1,2,3,4,5)
+print(3 in t)
+print(7 in t)
+
+True
+False
+
+#Built in Fuctions
+#Tuple Length
+t = (1,2,3,4,5,6)
+print(len(t))
+print(max(t))
+print(min(t))
+print(sum(t))
+
+6
+6
+1
+21
+
+#Tuple Sort
+t = (3,5,1,2,7,9,2)
+t1 = sorted(t, reverse = True)
+print(t1)
+
+[9, 7, 5, 3, 2, 2, 1]
+
+#Convert the tuple into a list to be able to change it:
+
+x = ("apple", "banana", "cherry")
+y = list(x)
+y[1] = "kiwi"
+x = tuple(y)
+
+print(x)
+
+('apple', 'kiwi', 'cherry')
+
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.append("orange")
+thistuple = tuple(y)
+print(thistuple)
+
+('apple', 'banana', 'cherry', 'orange')
+
+thistuple = ("apple", "banana", "cherry")
+y = ("orange",)
+thistuple += y
+
+print(thistuple)
+
+('apple', 'banana', 'cherry', 'orange')
+
+thistuple = ("apple", "banana", "cherry")
+y = list(thistuple)
+y.remove("apple")
+thistuple = tuple(y)
+print(thistuple)
+
+('banana', 'cherry')
+
+# Loop Through a Tuple
+thistuple = ("apple", "banana", "cherry")
+for x in thistuple:
+  print(x)
+
+apple
+banana
+cherry
+
+thistuple = ("apple", "banana", "cherry")
+for i in range(len(thistuple)):
+  print(thistuple[i])
+
+apple
+banana
+cherry
+
+thistuple = ("apple", "banana", "cherry")
+i = 0
+while i < len(thistuple):
+  print(thistuple[i])
+  i = i + 1
+
+apple
+banana
+cherry
+
+#Join two tuples:
+
+tuple1 = ("a", "b" , "c")
+tuple2 = (1, 2, 3)
+
+tuple3 = tuple1 + tuple2
+print(tuple3)
+
+('a', 'b', 'c', 1, 2, 3)
+
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+
+print(mytuple)
+
+('apple', 'banana', 'cherry', 'apple', 'banana', 'cherry')
+
+Python Sets
+Sets in Python are mutable, meaning you can add or remove elements after creating them. However, sets themselves are not allowed to contain duplicate values. Each element in a set must be unique, and any duplicate elements are automatically removed.
+Here's a brief summary of set characteristics:
+Mutable: Sets are mutable, so you can modify them by adding or removing elements.
+Unordered: Sets are unordered collections, and the elements do not have a specific order. Therefore, you cannot access elements by index.
+Unique Elements: Each element in a set must be unique. If you try to add a duplicate element, it will be ignored.
+
+#Sets is an unordered collection of items.
+s = {1,2,3}
+print(s)
+print(type(s))
+
+{1, 2, 3}
+<class 'set'>
+
+Days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}    
+print(Days)    
+print(type(Days))    
+print("looping through the set elements ... ")    
+for i in Days:    
+    print(i)    
+
+{'Monday', 'Friday', 'Tuesday', 'Thursday', 'Saturday', 'Sunday', 'Wednesday'}
+<class 'set'>
+looping through the set elements ... 
+Monday
+Friday
+Tuesday
+Thursday
+Saturday
+Sunday
+Wednesday
+
+#set does not allow duplicate values. They store only one instance.
+s = {1,2,3,1,4}
+print(s)
+
+{1, 2, 3, 4}
+
+#Duplicate values will be ignored:
+
+thisset = {"apple", "banana", "cherry", "apple"}
+
+print(thisset)
+
+{'apple', 'banana', 'cherry'}
+
+#True and 1 is considered the same value:
+
+thisset = {"apple", "banana", "cherry", True, 1, 2}
+
+print(thisset)
+
+{'cherry', True, 2, 'apple', 'banana'}
+
+#False and 0 is considered the same value:
+
+thisset = {"apple", "banana", "cherry", False, True, 0}
+
+print(thisset)
+
+{False, True, 'cherry', 'apple', 'banana'}
+
+#Get the number of items in a set:
+
+thisset = {"apple", "banana", "cherry"}
+
+print(len(thisset))
+
+3
+
+#Get the number of items in a set:
+
+thisset = {"apple", "banana", "cherry"}
+
+print(len(thisset))
+
+3
+
+#A set with strings, integers and boolean values:
+
+set1 = {"abc", 34, True, 40, "male"}
+
+#we can make set from a list
+s = set([1,2,3,4,5,1])
+print(s)
+type(s)
+
+{1, 2, 3, 4, 5}
+
+set
+
+#initialize a set with set() method
+s = set()
+print(type(s))
+
+<class 'set'>
+
+#set is unordered, means we cannot index
+s = {1,3}
+print(s[1])
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[87], line 3
+      1 #set is unordered, means we cannot index
+      2 s = {1,3}
+----> 3 print(s[1])
+
+TypeError: 'set' object is not subscriptable
+
+#Sets are mutable; henace we can add elements to the sets
+
+s.add(2)
+print(s)
+
+{1, 2, 3}
+
+#we can add multiple elements to the set
+s.update([5,6,7])
+print(s)
+
+{1, 2, 3, 5, 6, 7}
+
+#add list and set
+s.update([8,9],{10,1,2,11})
+print(s)
+
+{1, 2, 3, 5, 6, 7, 8, 9, 10, 11}
+
+#delete an item from the set, if an item does not exists in a set discard() does not raie an error
+print(s)
+s.discard(2)
+print(s)
+s.discard(2)
+print(s)
+
+{1, 5, 6, 7, 8, 9, 10, 11}
+{1, 5, 6, 7, 8, 9, 10, 11}
+{1, 5, 6, 7, 8, 9, 10, 11}
+
+#remove an item from the set, if item does not exists in a set then remove will raise an error.
+s.remove(3)
+print(s)
+s.remove(12)
+print(s)
+
+{1, 5, 6, 7, 8, 9, 10, 11}
+
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+~\AppData\Local\Temp\ipykernel_1896\166775852.py in <module>
+      2 s.remove(3)
+      3 print(s)
+----> 4 s.remove(12)
+      5 print(s)
+
+KeyError: 12
+
+#we can remove item using pop() method
+s = {1,2,3,4,5}
+s.pop() #remove random element
+s.pop()
+print(s)
+
+{3, 4, 5}
+
+s = {1,2,3,4,5}
+s.clear() # remove all the itmes in set using clear() method
+print(s)
+
+set()
+
+#Python Set Operations
+set1 = {1,2,3,4,5}
+set2 = {3,4,5,6,7}
+print(set1 | set2)
+
+{1, 2, 3, 4, 5, 6, 7}
+
+#another way of getting union of 2 sets
+print(set1.union(set2))
+
+{1, 2, 3, 4, 5, 6, 7}
+
+#intersection
+print(set1 & set2)
+
+{3, 4, 5}
+
+#use intersection function
+print(set1.intersection(set2))
+
+{3, 4, 5}
+
+#set difference: set of elements that are only in set1 but not in set2
+print(set1 - set2)
+
+{1, 2}
+
+print(set2 - set1)
+
+{6, 7}
+
+#Symetric difference: set of elements in both set1 and set2
+# excepts those that are common in both sets
+#use ^ operator
+print(set1 ^ set2)
+
+{1, 2, 6, 7}
+
+print(set1.symmetric_difference(set2))
+
+{1, 2, 6, 7}
+
+# find issubset
+x = {"a", "b", "c", "d","e"}
+y = {"c", "d"}
+print("set 'x' is a subset of 'y' ?", x.issubset(y))
+print("set 'y' is a subset of 'x' ?", y.issubset(x))
+
+set 'x' is a subset of 'y' ? False
+set 'y' is a subset of 'x' ? True
+
+#Frozen Sets has the characteristics of sets, but we cant changed it once it has been assigned
+# While tuples are immputable, frozen sets are immutable sets
+# Frozensets can be created using fucntion frozenset()
+set1 = frozenset([1,2,3,4])
+set2 = frozenset([3,4,5,6])
+set1.add(5)
+print(set1[1]) #frozenset also does not support indexing
+
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+Cell In[102], line 6
+      4 set1 = frozenset([1,2,3,4])
+      5 set2 = frozenset([3,4,5,6])
+----> 6 set1.add(5)
+      7 print(set1[1])
+
+AttributeError: 'frozenset' object has no attribute 'add'
+
+#forzenset supports all others operations like union, intersection etc.
+
+thisset = {"apple", "banana", "cherry"}
+
+for x in thisset:
+  print(x)
+
+apple
+banana
+cherry
+
+thisset = {"apple", "banana", "cherry"}
+
+print("banana" in thisset)
+
+True
+
+ 
+
+Mutable and ordered data structures: Lists
+Mutable and unordered data structures: Sets, Dictionaries
+Immutable and ordered data structures: Tuples
+1. Dictionary data structure is mutable
+2. The components of dictionary were made using keys and values.
+3. Keys must only have one component.
+4. Values can be of any type, including integer, list, and tuple.
+
+# Access Dictionary
+
+my_dict = {'name': 'satish', 'age': 27, 'address': 'guntur'}
+print(my_dict['name'])
+
+#another way to accessing key
+print(my_dict.get('address'))
+print(my_dict.get('degree'))
+
+satish
+guntur
+None
+
+#dict ADD or Modify Elements
+my_dict = {'name': 'satish', 'age': 27, 'address': 'guntur'}
+#update name
+my_dict['name'] = 'raju'
+print(my_dict['name'])
+print(my_dict)
+
+# add a value
+my_dict['degree'] = 'M.Tech.'
+print(my_dict)
+
+raju
+{'name': 'raju', 'age': 27, 'address': 'guntur'}
+{'name': 'raju', 'age': 27, 'address': 'guntur', 'degree': 'M.Tech.'}
+
+#Dictionary Delete or Remove Element
+my_dict = {'name': 'satish', 'age': 27, 'address': 'guntur'}
+print(my_dict.pop('age'))
+print(my_dict)
+
+27
+{'name': 'satish', 'address': 'guntur'}
+
+my_dict = {'name': 'satish', 'age': 27, 'address': 'guntur'}
+#remove an arbitrary key
+my_dict.popitem()
+
+('address', 'guntur')
+
+#delete items
+squares = {2:4, 3:9, 4:16, 5:25, 6:36}
+del squares[2]
+print(squares)
+
+{3: 9, 4: 16, 5: 25, 6: 36}
+
+#removers all items
+squares.clear()
+print(squares)
+
+{}
+
+squares = {2:4, 3:9, 4:16, 5:25, 6:36}
+del squares
+print(squares)
+#as while dictionary is removed from the memory that is why 
+#it is showing name error
+
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+~\AppData\Local\Temp\ipykernel_1896\189644823.py in <module>
+      1 squares = {2:4, 3:9, 4:16, 5:25, 6:36}
+      2 del squares
+----> 3 print(squares)
+      4 #as while dictionary is removed from the memory that is why
+      5 #it is showing name error
+
+NameError: name 'squares' is not defined
+
+squares = {2:4, 3:9, 4:16, 5:25, 6:36}
+my_dict1 = squares.copy()
+print(my_dict1)
+
+{2: 4, 3: 9, 4: 16, 5: 25, 6: 36}
+
+#fromkeys[seq[,v]] -> Return a new dictionary with keys from seq and values
+subjects = {}.fromkeys(['Maths','Physics','Hindi'],10)
+print(subjects)
+
+{'Maths': 10, 'Physics': 10, 'Hindi': 10}
+
+squares = {2:4, 3:9, 4:16, 5:25, 6:36}
+print(squares.items())
+#returns a new view of the dictionary items (key, values)
+
+dict_items([(2, 4), (3, 9), (4, 16), (5, 25), (6, 36)])
+
+squares = {2:4, 3:9, 4:16, 5:25, 6:36}
+print(squares.keys())
+
+dict_keys([2, 3, 4, 5, 6])
+
+squares = {2:4, 3:9, 4:16, 5:25, 6:36}
+print(squares.values())
+
+dict_values([4, 9, 16, 25, 36])
+
+#get list of all available methods and attributes of dictionary
+d ={}
+print(dir(d))
+
+['__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__ior__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__ror__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values']
+
+#Dict Comprehension
+#Dict comprehension are just like list comprehensions but for dictionaries
+d = {'a': 1, 'b': 2, 'c':3}
+for pairs in d.items():
+    print(pairs)
+
+('a', 1)
+('b', 2)
+('c', 3)
+
+#creating a new dictionary with only paires where the values is largers that 2
+
+d = {'a': 1, 'b': 2, 'c':3, 'd':4}
+for k,v in d.items():
+    if v>2:
+        print(k,v)
+
+c 3
+d 4
+
+d = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+new_dict = {k:v for k, v in d.items() if v>2}
+print(new_dict)
+
+{'c': 3, 'd': 4}
+
+#we can also perform operations on the key value pairs
+#d = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e':5}
+dd = {k + 'c': v *2 for k,v in d.items() if v>2}
+#print(d)
+print(dd)
+
+{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+{'ac': 2, 'bc': 4, 'cc': 6, 'dc': 8, 'ec': 10}
+
+#Strings
+#In python, strings is a sequence of Unicode character 
+mystring = "Hello"
+print(mystring)
+mystring = 'Hello'
+print(mystring)
+mystring='''Hello''' #for multi line comments  
+print(mystring)
+
+Hello
+Hello
+Hello
+
+#How to access characters in a string
+mystring = "Hello"
+print(mystring[0])
+print(mystring[-1])
+print(mystring[2:5])
+
+print(mystring[15]) #String index out of range
+print(mystring[1.5]) #string index must be an integer
+
+H
+o
+llo
+
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+Cell In[123], line 7
+      4 print(mystring[-1])
+      5 print(mystring[2:5])
+----> 7 print(mystring[15]) #String index out of range
+      8 print(mystring[1.5])
+
+IndexError: string index out of range
+
+#HOW TO CHANGE OR DELETE a STRING
+# Strings are immutable just like tuple. This means that elemnets of string cannot be changed once it is assigned.
+# We can simply reassign different strings to the same name.
+#However lists are mutable.
+
+mystring = "Hello"
+mystring[4] = 's' #strings are immutable
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[124], line 7
+      1 #HOW TO CHANGE OR DELETE a STRING
+      2 # Strings are immutable just like tuple. This means that elemnets of string cannot be changed once it is assigned.
+      3 # We can simply reassign different strings to the same name.
+      4 #However lists are mutable.
+      6 mystring = "Hello"
+----> 7 mystring[4] = 's'
+
+TypeError: 'str' object does not support item assignment
+
+#WE cannot delete or remove characters from a string. But deleting the string entirely is possible using the keyword del.
+del mystring #delete complete string
+
+print(mystring)
+
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+~\AppData\Local\Temp\ipykernel_1896\551408598.py in <module>
+----> 1 print(mystring)
+
+NameError: name 'mystring' is not defined
+
+#String Operations
+s1 = "Hello"
+s2 = "Satish"
+
+print(s1+" "+s2)
+print(s1 + s2)
+print(s1 * 3) #repeat string three times
+print('New string variable:',3* s1)
+
+Hello Satish
+HelloSatish
+HelloHelloHello
+New string variable: HelloHelloHello
+
+str = 'Python program'
+print(str[7:9]*3) #Repeats the seventh and eighth character three times
+
+prprpr
+
+#Iteration through the string
+count = 0
+a = input()
+for l in "hello world":
+    if l == a:
+        count += 1
+print(count, 'letter found')
+
+l
+3 letter found
+
+#String Membership Test
+print('z' in 'Hello World') #in operator to test membership
+
+False
+
+print('or' in 'Hello World')
+
+True
+
+#String methods: some of the commonly used methods are 
+#lower(), upper(), join(), split(), find(), replace()
+"Hello".lower()
+
+'hello'
+
+"Hello".upper()
+
+'HELLO'
+
+"This will split all words in a list".split()
+
+['This', 'will', 'split', 'all', 'words', 'in', 'a', 'list']
+
+' '.join(['This', 'will', 'split', 'all', 'words', 'in', 'a', 'list'])
+
+'This will split all words in a list'
+
+"Good Morning".find("Mo")
+
+5
+
+'-'.join(['This', 'will', 'split', 'all', 'words', 'in', 'a', 'list'])
+
+'This-will-split-all-words-in-a-list'
+
+"Bad Morning".replace("Bad","Good")
+
+'Good Morning'
+
+#Python Program to check where a String is Palindrome or not?
+myStr = "MadaM"
+myStr = myStr.lower()
+revStr = reversed(myStr)
+
+#if myStr == revStr: (this will not work as both myStr and revStr is pointed to some other location in memory)
+if list(myStr)== list(revStr):
+    print("given String is Palindrome")
+else:
+    print("given String is not a Palindrome")
+
+given String is Palindrome
+
+#Python Program to Sort Words in Alphbetic Order
+myStr = "Python Program to Sort Words in Alphabetic Order"
+words = myStr.split()
+words.sort()
+for word in words:
+    print(word)
+
+Alphabetic
+Order
+Program
+Python
+Sort
+Words
+in
+to
+
+numbers = [1, 3, 5, 7, 10, 15, 20]
+
+# Loop through the numbers and perform conditional checks
+for num in numbers:
+    if num % 5 == 0:
+        # Placeholder: Perform some action for numbers divisible by 5 later
+        pass
+        print(num, "number 5")
+    elif num % 3 == 0:
+        # Placeholder: Perform some action for numbers divisible by 3 later
+        pass
+        print(num, "number 3")
+    else:
+        # Placeholder: Perform some other action for other numbers later
+        pass
+    
+
+3 number 3
+5 number 5
+10 number 5
+15 number 5
+20 number 5
+
+ 
+
