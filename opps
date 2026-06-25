@@ -1,0 +1,172 @@
+"""
+PROJECT 1: Simple (Recalls basics)
+───────────────────────────────────
+"Library Management System"
+- Classes: Book, Member, Library
+- Inheritance: StudentMember, TeacherMember
+- Encapsulation: Private attributes
+- Magic methods: __str__, __repr__
+"""
+
+class Book:
+    def __init__(self, title, author, isbn):
+        self.title = title
+        self.author = author
+        self.isbn = isbn
+        self._is_borrowed = False  # Encapsulation
+    
+    def borrow(self):
+        if not self._is_borrowed:
+            self._is_borrowed = True
+            return True
+        return False
+    
+    def return_book(self):
+        self._is_borrowed = False
+    
+    def __str__(self):
+        return f"📚 {self.title} by {self.author}"
+
+class Library:
+    def __init__(self, name):
+        self.name = name
+        self.books = []
+    
+    def add_book(self, book):
+        self.books.append(book)
+    
+    def search_by_title(self, title):
+        return [book for book in self.books if title.lower() in book.title.lower()]
+
+# This project is ~100 lines - Perfect for recall!
+
+"""
+PROJECT 2: Medium (Recalls + New concepts)
+───────────────────────────────────────────
+"E-commerce Shopping Cart"
+- OOP + Decorators (for logging)
+- OOP + Generators (for product streaming)
+- OOP + Context Managers (for database)
+"""
+
+from functools import wraps
+import time
+
+def log_action(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print(f"🛒 {func.__name__} called")
+        return func(*args, **kwargs)
+    return wrapper
+
+class Product:
+    def __init__(self, name, price, stock):
+        self.name = name
+        self.price = price
+        self.stock = stock
+    
+    @log_action
+    def purchase(self, quantity):
+        if quantity <= self.stock:
+            self.stock -= quantity
+            return True
+        return False
+
+class ShoppingCart:
+    def __init__(self):
+        self.items = {}
+    
+    def add_product(self, product, quantity):
+        if product.name in self.items:
+            self.items[product.name]['quantity'] += quantity
+        else:
+            self.items[product.name] = {
+                'product': product,
+                'quantity': quantity
+            }
+    
+    def __iter__(self):
+        for item in self.items.values():
+            yield item['product'], item['quantity']
+
+# This project is ~200 lines
+
+"""
+PROJECT 3: Advanced (Recalls + Async)
+─────────────────────────────────────
+"Real-time Stock Price Monitor"
+- OOP + Async/Await
+- OOP + Generators (streaming data)
+- OOP + Context Managers
+- OOP + Decorators
+"""
+
+import asyncio
+import random
+from contextlib import asynccontextmanager
+from dataclasses import dataclass
+
+@dataclass
+class Stock:
+    symbol: str
+    price: float
+    
+    def update_price(self, new_price):
+        self.price = new_price
+    
+    def __str__(self):
+        return f"${self.symbol}: ${self.price:.2f}"
+
+class StockMonitor:
+    def __init__(self):
+        self.stocks = {}
+    
+    async def watch_stock(self, symbol, interval=1):
+        """Generator that streams price updates"""
+        while True:
+            if symbol in self.stocks:
+                change = random.uniform(-5, 5)
+                self.stocks[symbol].update_price(
+                    self.stocks[symbol].price + change
+                )
+                yield self.stocks[symbol]
+            await asyncio.sleep(interval)
+    
+    async def run_monitor(self, symbols):
+        """Async monitor for multiple stocks"""
+        tasks = []
+        for symbol in symbols:
+            self.stocks[symbol] = Stock(symbol, random.uniform(10, 100))
+            tasks.append(self.watch_stock(symbol))
+        
+        # Run all monitors concurrently
+        while True:
+            for task in asyncio.as_completed(tasks):
+                stock = await task
+                print(f"📊 {stock}")
+    
+    @asynccontextmanager
+    async def stock_session(self):
+        """Context manager for monitoring session"""
+        print("📈 Starting stock monitor...")
+        try:
+            yield self
+        finally:
+            print("📉 Stopping stock monitor...")
+            await asyncio.sleep(0.5)
+
+# This project is ~150 lines
+
+"""
+PROJECT 4: Full Stack (Everything combined)
+────────────────────────────────────────────
+"Personal Task Management System"
+- OOP for data models
+- Decorators for authentication/logging
+- Generators for task streaming
+- Context managers for file handling
+- Async for multiple operations
+- Type hints throughout
+"""
+
+# This project is ~300 lines - The ultimate recall!
