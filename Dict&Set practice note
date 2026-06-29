@@ -1,0 +1,129 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+# print("Start small. Ship something.")
+
+
+# library={"python":"pandas","java":"spring","javascript":"reacts",
+#     "frontend":{"Html":"Skelton structure","CSS":"For styling","JS":"For functional"
+# }}
+
+# print(library["frontend"]["Html"])
+# print(len(library))
+# print(list(library.keys()))
+
+# print(type(library.values()))
+# print(library.values())
+# for i in library.keys():
+#     print(i)
+
+# for i in library.values():
+#     print(i)
+
+# for i in library: #if we simple traverse library bydefault it'll give keys
+#     print(i)
+    
+# print(library.items()) #This will give us key along with values pairs as tuple like bellow:
+#dict_items([('python', 'panda'), ('java', 'spring'), ('javascript', 'reacts')])
+# functioanlity=list(library.items())
+# print(functioanlity[0])
+# print(library.get("java"))
+# print(library["javas"]) #if we give wrong key it will give us error
+# print(library.get("javas"))# if we give wrong key then it will give us none
+
+
+# library={"python":"pandas","java":"spring","javascript":"reacts",
+#     "frontend":{"Html":"Skelton structure","CSS":"For styling","JS":"For functional"
+# }}
+# new_Dict={"city":"Mumbai"}
+# # library.update(new_Dict) #or library.update("city":"Mumbai")
+# library.update({"city":"Mumbai"})
+# print(library)
+
+# set in python
+# =============
+# mySet={2,3,5,6,32,3,2,5,"Dipak","Pankaj","Manisha","Gayatri","Ankita","Sumar",True,24.60,(3421,334,22)}
+# print(mySet)
+
+# newSet={""}
+#creating empty set
+# myset=set()
+
+
+# Set Methods
+# ===========
+# set.add(element) #adds an element
+# newSet2={"Amba","Nadia","Kamala"} 
+# print(type(newSet2))
+# print(newSet2)
+# newSet2.add("Kadali")
+# print(newSet2)
+
+
+# set.remove(element) # removes the element
+# newSet2.remove("Kadali")
+# print(newSet2)
+# set.pop() #removes a random value
+# newSet2.pop()
+# print(newSet2)
+
+# set.clear() #empties the set
+# newSet2.clear()
+# print(newSet2)
+
+# set.union(set2) #combines both set values and returns new
+# set={1,2,3,4}
+# set2={1,2,3,6,5,3,9}
+# set2=set.union(set2)
+# print(set2)
+# print(set)
+
+#set.intersection(set2) #combines common values and return new
+# set={1,2,3,4}
+# set2={1,2,3,6,5,3,9}
+# print(set.intersection(set2))
+
+# Let's practice
+# Store following word meanings in a python dictionary
+# table: "a piece of furniture", "list of facts & figures"
+# cat:"a small animal"
+
+# meaning={"table": ["a piece of furniture","list of facts & figures"], "cat":"a small animal"}
+# print(meaning)
+# print(meaning.items())
+
+
+# You are given a list of subjects for students. Assume on classroom is required for 1 subject. How many classroom are needed by all students.
+# subject={"python","java","C++","python","Javascript","java","python","java","C++","C"}
+# class_Room=0
+# for i in subject:
+#     class_Room+=1
+# print(f"Total class room required is {class_Room}")
+
+
+# WAP to enter marks of 3 subjects from the user and store them in a dictionary. Start with an empty dictionary and add one by one. Use subject name as key and marks as value 
+# math=int(input("Enter your mark you got in math subject "))
+# phy=int(input("Enter your mark you got in phy subject "))
+# che=int(input("Enter your mark you got in che subject "))
+# student={}
+# student["math"]=math
+# student["phy"]=phy
+# student["che"]=che
+# print(student)
+
+# OR Using .update() function
+# ==========================
+# student={}
+# math=int(input("Enter your mark you got in math subject "))
+# student.update({"math":math})
+# phy=int(input("Enter your mark you got in phy subject "))
+# student.update({"physics":phy})
+# che=int(input("Enter your mark you got in che subject "))
+# student.update({"chemisty":che})
+# print(student)
+
+
+# Figure out a way to store 9 and 9.0 as separete value in the set
+values={9,"9.0"}
+value={("flot",9.0),("int",0)}
+print(value)
+print(values)
